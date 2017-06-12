@@ -558,189 +558,50 @@
               <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
               <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
                 master
-              </span>
-            </a>
-        </div>
+              </span>>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/npwinkler/Python-and-Data-Science-Work/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Wsqq8tHVirbG4inKNm350y78dXUbUpwm7QU5I9W5BqXz5Ld44HKD1n2LrEI5DwfSD9WmrjUVYX6QZj6L0ZzC+g==" /></div>
-          <svg aria-hidden="true" class="octicon octicon-git-branch select-menu-item-icon" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-            <div class="select-menu-item-text">
-              <span class="select-menu-item-heading">Create branch: <span class="js-new-item-name"></span></span>
-              <span class="description">from ‘master’</span>
-            </div>
-            <input type="hidden" name="name" id="name" class="js-new-item-value">
-            <input type="hidden" name="branch" id="branch" value="master">
-            <input type="hidden" name="path" id="path" value="Untitled%20Folder/README.md">
-</form>
-      </div>
+            class="js-pjax-capture-input btn btn-sm BGiven a train set and a test set from the UCI Housing Data Set, my task was to train a predictive model on the train set for "MEDV: Median value of owner-occupied homes in $1000's" so as to minimize the root mean square error on the test set.
 
-      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
-        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+After 3 hours of my work,
 
+What I tried, in short: linear regression on most important variables (room, distance, lower status %) and decision tree regression with the same variables plus ones which split the data into categories (crime, blacks, radius, tax).
 
-        </div>
+How models perform, in short: The latter model seemed to work very well (perhaps too well). The first model was not that great, despite seeming like these were really the three variables that mattered the most.
 
-        <div class="select-menu-no-results">Nothing to show</div>
-      </div>
+My impression is that the number of rooms is the most predictive, with the lower status % and distance variables also being important.
 
-    </div>
-  </div>
-</div>
+My process:
 
-    <div class="BtnGroup float-right">
-      <a href="/npwinkler/Python-and-Data-Science-Work/find/master"
-            class="js-pjax-capture-input btn btn-sm BtnGroup-item"
+The data was very clean, so I did not have to do any replacements. After looking at the data for a while (mostly scatterplots of MEDV vs. another variable), I found that RM and DIS seemed to be in linear relationships with MEDV while LSTAT was in more of a logarithmic relationship with it. As such, I wanted to see how well a simple linear regression of those last 3 variables predicting MEDV would perform, which I did after standardizing the data; I got a high RMSE based off of this. So, I decided I would account for how there seemed to be some amount of different categories of houses based on thresholds for crime, blacks, tax values, and radius. For example, it seemed like there was a split between houses with low-medium amounts of crime comprising one sample and houses in high crime areas (>25 per capital crime rate) comprising another. Thus, I decided that a decision tree would be good because it could split up the data based on these thresholds. This performed a lot better.
+
+I would have liked to also account for the logarithmic nature of the MEDV and LSTAT relationship more, but did not have time. Similarly, if I had more time and was more proficient in these libraries as opposed to R, I would like to have split the test data into test and validation and been able to run some actual model evaluation. Hopefully, I will pick up the proficiency to work with these libraries a lot faster and more confidently as time goes on :)tnGroup-item"
             data-pjax
             data-hotkey="t">
         Find file
       </a>
-      <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
-    </div>
-    <div class="breadcrumb js-zeroclipboard-target">
-      <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/npwinkler/Python-and-Data-Science-Work"><span>Python-and-Data-Science-Work</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/npwinkler/Python-and-Data-Science-Work/tree/master/Untitled%20Folder"><span>Untitled Folder</span></a></span><span class="separator">/</span><strong class="final-path">README.md</strong>
-    </div>
-  </div>
+      
+     Given a train set and a test set from the UCI Housing Data Set, my task was to train a predictive model on the train set for "MEDV: Median value of owner-occupied homes in $1000's" so as to minimize the root mean square error on the test set.
 
+After 3 hours of my work,
 
-  <include-fragment class="commit-tease" src="/npwinkler/Python-and-Data-Science-Work/contributors/master/Untitled%20Folder/README.md">
-    <div>
-      Fetching contributors&hellip;
-    </div>
+What I tried, in short: linear regression on most important variables (room, distance, lower status %) and decision tree regression with the same variables plus ones which split the data into categories (crime, blacks, radius, tax).
 
-    <div class="commit-tease-contributors">
-      <img alt="" class="loader-loading float-left" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" />
-      <span class="loader-error">Cannot retrieve contributors at this time</span>
-    </div>
-</include-fragment>
-  <div class="file">
-    <div class="file-header">
-  <div class="file-actions">
+How models perform, in short: The latter model seemed to work very well (perhaps too well). The first model was not that great, despite seeming like these were really the three variables that mattered the most.
 
-    <div class="BtnGroup">
-      <a href="/npwinkler/Python-and-Data-Science-Work/raw/master/Untitled%20Folder/README.md" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
-        <a href="/npwinkler/Python-and-Data-Science-Work/blame/master/Untitled%20Folder/README.md" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a>
-      <a href="/npwinkler/Python-and-Data-Science-Work/commits/master/Untitled%20Folder/README.md" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
-    </div>
+My impression is that the number of rooms is the most predictive, with the lower status % and distance variables also being important.
 
+My process:
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/npwinkler/Python-and-Data-Science-Work/edit/master/Untitled%20Folder/README.md" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="LcDN3nxMeDQ3XouyBiVlwV+x91OvT+8OakGjZRBZx4t9N3JOlJcPgRzUkFaXS3U757WXM5z4uoVRWQX/O2J44w==" /></div>
-          <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
-            aria-label="Edit this file" data-hotkey="e" data-disable-with>
-            <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
-          </button>
-</form>        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/npwinkler/Python-and-Data-Science-Work/delete/master/Untitled%20Folder/README.md" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="kWnVITdGWg0loJIO9sMmgai8WGAL9JSeUMCJgVvrMWSOklpPjsyCOuD0kK1yshov2GIBE9UFaFkvJhBzKJ/C8A==" /></div>
-          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
-            aria-label="Delete this file" data-disable-with>
-            <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
-          </button>
-</form>  </div>
+The data was very clean, so I did not have to do any replacements. After looking at the data for a while (mostly scatterplots of MEDV vs. another variable), I found that RM and DIS seemed to be in linear relationships with MEDV while LSTAT was in more of a logarithmic relationship with it. As such, I wanted to see how well a simple linear regression of those last 3 variables predicting MEDV would perform, which I did after standardizing the data; I got a high RMSE based off of this. So, I decided I would account for how there seemed to be some amount of different categories of houses based on thresholds for crime, blacks, tax values, and radius. For example, it seemed like there was a split between houses with low-medium amounts of crime comprising one sample and houses in high crime areas (>25 per capital crime rate) comprising another. Thus, I decided that a decision tree would be good because it could split up the data based on these thresholds. This performed a lot better.
 
-  <div class="file-info">
-      17 lines (8 sloc)
-      <span class="file-info-divider"></span>
-    2.27 KB
-  </div>
-</div>
-
-    
-  <div id="readme" class="readme blob instapaper_body">
-    <article class="markdown-body entry-content" itemprop="text"><p>Given a train set and a test set from the UCI Housing Data Set, my task was to train a predictive model on the train set  for "MEDV: Median value of owner-occupied homes in $1000's" so as to minimize the root mean square error on the test set.</p>
+I would have liked to also account for the logarithmic nature of the MEDV and LSTAT relationship more, but did not have time. Similarly, if I had more time and was more proficient in these libraries as opposed to R, I would like to have split the test data into test and validation and been able to run some actual model evaluation. Hopefully, I will pick up the proficiency to work with these libraries a lot faster and more confidently as time goes on :)
+   <p>Given a train set and a test set from the UCI Housing Data Set, my task was to train a predictive model on the train set  for "MEDV: Median value of owner-occupied homes in $1000's" so as to minimize the root mean square error on the test set.</p>
 <p>After 3 hours of my work,</p>
 <p>What I tried, in short: linear regression on most important variables (room, distance, lower status %) and decision tree regression with the same variables plus ones which split the data into categories (crime, blacks, radius, tax).</p>
 <p>How models perform, in short: The latter model seemed to work very well (perhaps too well). The first model was not that great, despite seeming like these were really the three variables that mattered the most.</p>
 <p>My impression is that the number of rooms is the most predictive, with the lower status % and distance variables also being important.</p>
 <p>My process:</p>
 <p>The data was very clean, so I did not have to do any replacements. After looking at the data for a while (mostly scatterplots of MEDV vs. another variable), I found that RM and DIS seemed to be in linear relationships with MEDV while LSTAT was in more of a logarithmic relationship with it. As such, I wanted to see how well a simple linear regression of those last 3 variables predicting MEDV would perform, which I did after standardizing the data; I got a high RMSE based off of this. So, I decided I would account for how there seemed to be some amount of different categories of houses based on thresholds for crime, blacks, tax values, and radius. For example, it seemed like there was a split between houses with low-medium amounts of crime comprising one sample and houses in high crime areas (&gt;25 per capital crime rate) comprising another. Thus, I decided that a decision tree would be good because it could split up the data based on these thresholds. This performed a lot better.</p>
-<p>I would have liked to also account for the logarithmic nature of the MEDV and LSTAT relationship more, but did not have time. Similarly, if I had more time and was more proficient in these libraries as opposed to R, I would like to have split the test data into test and validation and been able to run some actual model evaluation. Hopefully, I will pick up the proficiency to work with these libraries a lot faster and more confidently as time goes on :)</p>
-</article>
-  </div>
-
-  </div>
-
-  <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button>
-  <div id="jump-to-line" style="display:none">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-      <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
-      <button type="submit" class="btn">Go</button>
-</form>  </div>
-
-
-
-
-
-
-  </div>
-  <div class="modal-backdrop js-touch-events"></div>
-</div>
-
-
-
-    </div>
-  </div>
-
-  </div>
-
-      
-<div class="container site-footer-container">
-  <div class="site-footer " role="contentinfo">
-    <ul class="site-footer-links float-right">
-        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
-      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
-      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
-      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
-        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
-        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
-
-    </ul>
-
-    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
-      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-</a>
-    <ul class="site-footer-links">
-      <li>&copy; 2017 <span title="0.18222s from unicorn-1321845377-h927w">GitHub</span>, Inc.</li>
-        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
-        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
-        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
-        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
-        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
-    </ul>
-  </div>
-</div>
-
-
-
-  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
-    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
-    <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
-      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-    </button>
-    You can't perform that action at this time.
-  </div>
-
-
-    
-    <script crossorigin="anonymous" integrity="sha256-c3IPAnuzF/zrEYwlknXaS+Xvo0TCRqEjQaaMMWjO6qc=" src="https://assets-cdn.github.com/assets/frameworks-73720f027bb317fceb118c259275da4be5efa344c246a12341a68c3168ceeaa7.js"></script>
-    <script async="async" crossorigin="anonymous" integrity="sha256-dWXwCAj2q2elNd2XdDs+Or8+TSgkOuJwAD29bKW3EuE=" src="https://assets-cdn.github.com/assets/github-7565f00808f6ab67a535dd97743b3e3abf3e4d28243ae270003dbd6ca5b712e1.js"></script>
-    
-    
-    
-    
-  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
-    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
-    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
-    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
-  </div>
-  <div class="facebox" id="facebox" style="display:none;">
-  <div class="facebox-popup">
-    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
-    </div>
-    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
-      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
-    </button>
-  </div>
-</div>
-
-
-  </body>
-</html>
+<p>I would have liked to also account for the logarithmic nature of the MEDV and LSTAT relationship more, but did not have time. Similarly, if I had more time and was more proficient in these libraries as opposed to R, I would like to have split the test data into test and validation and been able to run some actual model evaluation. Hopefully, I will pick up the proficiency to work with these libraries a lot faster and more confidently as time goes on :)
+   
 
