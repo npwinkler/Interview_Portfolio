@@ -1,4 +1,4 @@
-In applying to and being accepted for Signal Data Science (which I did not end up attending,)I completed an application task of:
+In applying to and being accepted for Signal Data Science(, which I did not end up attending,) I completed an application task of:
 "Given a train set and a test set from the UCI Housing Data Set, train a predictive model on the train set for "MEDV: Median value of owner-occupied homes in $1000's" so as to minimize the root mean square error on the test set within 3 hours."
 
 After 3 hours of my work,
