@@ -3,7 +3,7 @@ In applying to and being accepted for Signal Data Science(, which I did not end 
 
 After 3 hours of my work,
 
-What I tried, in short: linear regression on most important variables (room, distance, lower status %) and decision tree regression with the same variables plus ones which split the data into categories (crime, blacks, radius, tax).
+What I tried, in short: linear regression on most important variables (room, distance, lower status %) and decision tree regression with the same variables plus ones (crime, blacks, radius, tax) which split the data into clusters .
 
 How models perform, in short: The latter model seemed to work very well (perhaps too well). The first model was not that great, despite seeming like these were really the three variables that mattered the most.
 
