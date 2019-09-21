@@ -1,6 +1,6 @@
 
-/* T-Shirt Sales Database Usage */
-When ordering shirts for my house's t-shirt sales, I took a Google Poll, imported the data into a .csv so it could be read
-by sqlite. Then, I automatically rather than manually found out how many shirts of each color and size combination I needed
-to order as well as checked for null values and improper input to be able to re-contact the right people.
-
+/* T-Shirt Sales Database Design, Implementation, and Usage */
+When ordering shirts for my house's t-shirt sales, I used Google Forms to collect orders, imported the data into a .csv, and 
+then designed a SQLite database to be able to handle that data. After having designed and populated the database, I 
+used SQL to perform functions such as automatically rather than manually finding how many shirts of each color and size 
+combination I needed to order as well as checked for null values and improper input to be able to re-contact the right people.
