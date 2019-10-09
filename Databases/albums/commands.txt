@@ -1,0 +1,68 @@
+.separator ,
+
+CREATE TABLE Artists (
+artistID INTEGER,
+artistName STRING,
+primary key(artistID)
+);
+
+.import artists.csv Artists
+
+CREATE TABLE Albums (
+albumID INTEGER,
+albumTitle STRING,
+date INTEGER,
+genreID INTEGER,
+primary key(albumID),
+foreign key(genreID) references Genres(genreID)
+);
+
+.import albums.csv Albums
+
+CREATE TABLE Songs (
+songID INTEGER,
+songTitle STRING,
+primary key(songID)
+);
+
+.import songs.csv Songs
+
+CREATE TABLE Genres (
+genreID INTEGER,
+genre STRING,
+primary key(genreID)
+);
+
+.import genres.csv Genres
+
+CREATE TABLE artistToAlbums(
+artistID integer,
+albumID integer,
+primary key(artistID, albumID),
+foreign key(artistID) references Artists(artistID),
+foreign key(albumID) references Albums(albumID)
+);
+
+.import art2alb.csv artistToAlbums
+
+CREATE TABLE albumToSongs(
+albumID integer,
+songID integer,
+track integer,
+primary key(albumID, songID),
+foreign key(albumID) references Albums(albumID),
+foreign key(songID) references Songs(songID)
+);
+
+.import alb2song.csv albumToSongs
+
+CREATE TABLE featuredArtists (
+songID integer,
+artistID integer,
+primary key(songID, artistID),
+foreign key(songID) references Songs(songID),
+foreign key(artistID) references Artists(artistID)
+);
+
+.import featart.csv featuredArtists
+
